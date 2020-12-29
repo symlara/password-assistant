@@ -1,1 +1,1 @@
-# password-assistant
+# Password Generator
