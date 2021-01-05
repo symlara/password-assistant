@@ -2,31 +2,32 @@
 
 
 // Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
 
+var generateBtn = document.querySelector("#generate").addEventListener("click", function() { alert("What is the password lenght?")});
+
+
+function generatePassword(length) {
+  
+}
 
 
 // Write password to the #password input
-function writePassword(length) {
-  var password = "Abcdefgh00005678910!!";
+function writePassword() {
+  var password = generatePassword();
   var passwordText = document.querySelector("#password");
-  
-  passwordText.value =  password;
+
+
+  password.value = writePassword;
 
 }
-  
+
+
+
+
 
 // Add event listener to generate button
-
 generateBtn.addEventListener("click", writePassword);
 
 
 
-var generateBtn = document.querySelector("#generate").addEventListener("click", function() { alert("What would you like the length of the password to be?")});
-
-var generateBtn = document.querySelector("#generate").addEventListener("click", function() { alert("Must be at least 8 characters and no more than 128 characters")})
-
-var generateBtn = document.querySelector("#generate").addEventListener("click", function() { alert("What kind of character types are needed in the password?")});
-
-var generateBtn = document.querySelector("#generate").addEventListener("click", function() { alert("lowercase, uppercase, numeric, and/or special characters")});
 
