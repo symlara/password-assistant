@@ -1,11 +1,10 @@
 // Assignment code here
-
-
 var enter;
 var characterType;
 var number;
 var Lowercase;
 var Uppercase;
+
 
 // special chatacters
 character = ["!, $, #, &, %, _ , ~ "];
@@ -26,7 +25,7 @@ var generateBtn = document.querySelector("#generate");
 
 generateBtn.addEventListener("click", function() {
   pass = generatePassword();
-  document.getElementById("password").placeholder = pass;
+  document.getElementById("#password")
 });
 
 // function to generate password 
@@ -54,6 +53,8 @@ if (!characterType && !number && !Lowercase && Uppercase) {
 
 }
 
+// else if for 2 positive options
+
 else if (characterType && number) {
   choices = character.concat(number);
 }
@@ -78,6 +79,8 @@ else if (number && Uppercase) {
   choices = number.concat(alpha);
 }
 
+// else if for 1 positive option
+
 else if (characterType) {
   choices = character;
 }
@@ -91,7 +94,8 @@ else if (Uppercase) {
 
 else if (Lowercase) {
   choices = alpha;
-}
+};
+
 var password = [];
 
 for (var i = 0; i < enter; i++) {
@@ -99,18 +103,19 @@ for (var i = 0; i < enter; i++) {
   password.push(Choices);
 }
 
-
-
 }
+
+
+
 
 
 // Write password to the #password input
+
 function writePassword() {
-  var password = generatePassword(pass);
+  var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
 }
-
 
 
 
