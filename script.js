@@ -99,8 +99,8 @@ else if (Lowercase) {
 var password = [];
 
 for (var i = 0; i < enter; i++) {
-  var Choices = choices[Math.floor(Math.random() * choices.length)];
-  password.push(Choices);
+  var pickChoices = choices[Math.floor(Math.random() * choices.length)];
+  password.push(pickChoices);
 }
 
 }
@@ -114,7 +114,7 @@ for (var i = 0; i < enter; i++) {
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
+ passwordText.value = password;
 }
 
 
