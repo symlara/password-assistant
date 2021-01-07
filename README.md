@@ -10,3 +10,4 @@ Once a user gains access to the application in a browser and click on the "Gener
 After they've clicked "ok" for each question then a random password will be generated from the JS code.
 
 
+[Screenshot of Password Generator] https://user-images.githubusercontent.com/40181569/103926392-79b81100-50de-11eb-9196-9f95d9ccdd90.png
