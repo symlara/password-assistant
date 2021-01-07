@@ -7,26 +7,23 @@ var Uppercase;
 
 
 // special chatacters
-character = ["!, $, #, &, %, _ , ~ "];
+character = ["!", "$", "#", "&", "%", "_" , "~ "];
 
 //number characters
 number = [1, 2, 3, 4, 5, 6];
 
 //letter characters 
-alpha = ["a, b, c, D, e, f, g, h, i , j, k" ];
+alpha = ["a", "b", "c", "D", "e", "f", "g", "h", "i" , "j", "k" ];
 
 // choices for user input
-var choices;
+var choices = [];
 
 
 // Get references to the #generate element
 
 var generateBtn = document.querySelector("#generate");
 
-generateBtn.addEventListener("click", function() {
-  pass = generatePassword();
-  document.getElementById("#password")
-});
+
 
 // function to generate password 
 
@@ -44,65 +41,34 @@ if(!enter) {
   characterType =  confirm("What character types are in this password?");
   Lowercase = confirm("Will there be lowercase letters?");
   Uppercase = confirm("Will there be uppercase letters?");
-  number = confirm("Will this password have numbers?");
+  number_input = confirm("Will this password have numbers?");
 
 };
 
-if (!characterType && !number && !Lowercase && Uppercase) {
-  choices = alert("Choose password criteria");
-
+// arrays calling from above 
+if(Lowercase){
+  choices = choices.concat(alpha)
 }
 
-// else if for 2 positive options
-
-else if (characterType && number) {
-  choices = character.concat(number);
+if(Uppercase){
+  choices = choices.concat(character);
 }
 
-else if (characterType && Lowercase) {
-  choices = character.concat(alpha);
+if(number){
+  choices = choices.concat(number);
 }
 
-else if (characterType && Uppercase) {
-  choices = character.concat(alpha);
-}
-
-else if (Lowercase && number) {
-  choices = alpha.concat(number);
-}
-
-else if (Lowercase && Uppercase) {
-  choices = alpha.concat(alpha);
-}
-
-else if (number && Uppercase) {
-  choices = number.concat(alpha);
-}
-
-// else if for 1 positive option
-
-else if (characterType) {
-  choices = character;
-}
-else if (number) {
-  choices = number;
-}
-
-else if (Uppercase) {
-  choices = alpha;
-}
-
-else if (Lowercase) {
-  choices = alpha;
-};
 
 var password = [];
 
 for (var i = 0; i < enter; i++) {
-  var pickChoices = choices[Math.floor(Math.random() * choices.length)];
-  password.push(pickChoices);
+  var Choices = choices[Math.floor(Math.random() * choices.length)];
+  password.push(Choices);
 }
+console.log(password);
 
+// turn the array into a string
+return password.join("");
 }
 
 
@@ -114,7 +80,8 @@ for (var i = 0; i < enter; i++) {
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
- passwordText.value = password;
+
+  passwordText.value = password;
 }
 
 
