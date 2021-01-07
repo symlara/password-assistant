@@ -45,7 +45,7 @@ if(!enter) {
 
 };
 
-// arrays calling from above 
+// arrays being called from the above variables
 if(Lowercase){
   choices = choices.concat(alpha)
 }
@@ -61,11 +61,13 @@ if(number){
 
 var password = [];
 
+// for loop that tells the choices array how to run
+
 for (var i = 0; i < enter; i++) {
   var Choices = choices[Math.floor(Math.random() * choices.length)];
   password.push(Choices);
 }
-console.log(password);
+
 
 // turn the array into a string
 return password.join("");
